@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Request {
+    int32 id = 1;
+}
+
+message Response {
+    repeated int32 loc = 1;
+    int32 id = 2;
+}
+
+service PingPong {
+    rpc ping(Request) returns (Response) {}
+    rpc register(Request) returns (Response) {}
+    rpc update(Request) returns (stream Response) {}
+}
