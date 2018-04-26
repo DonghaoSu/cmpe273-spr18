@@ -21,3 +21,7 @@ def users(id):
 @app.route("/users/<int:id>", methods=['DELETE'])
 def del_users(id):
     return ("", 204)
+
+
+if __name__ == '__main__':
+  app.run(host='0.0.0.0', debug=True)
